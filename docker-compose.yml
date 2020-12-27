@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 8081:8081
+    volumes:
+      - ".:/go/src/github.com/konhas/echo-server"
+    command: go run -v /go/src/github.com/konhas/echo-server/main.go
