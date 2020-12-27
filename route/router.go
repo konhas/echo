@@ -3,8 +3,8 @@ package route
 import (
 	"net/http"
 
-	mw "github.com/labstack/echo/middleware"
 	"github.com/labstack/echo/v4"
+	mw "github.com/labstack/echo/v4/middleware"
 )
 
 func Init() *echo.Echo {

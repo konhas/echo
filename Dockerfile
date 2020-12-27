@@ -1,6 +1,6 @@
 FROM golang:1.15-alpine as build-env
 
-WORKDIR /echo-server/
+WORKDIR /github/konhas/echo-server/
 
 
 COPY go.mod .
@@ -12,7 +12,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o /go/bin/echo-server echo-server
+RUN go build -o /go/bin/echo-server github/konhas/echo-server
 
 CMD [ "/go/bin/echo-server"]
 
