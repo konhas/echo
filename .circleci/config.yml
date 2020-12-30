@@ -11,6 +11,7 @@ jobs:
     working_directory: /go/src/github.com/konhas/echo-server
     steps:
       - checkout
+      - run: apt-get install -y sudo
       - run:
           name: setup
           command: sudo apt-get update && sudo apt-get install -y make
