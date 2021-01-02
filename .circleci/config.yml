@@ -14,9 +14,9 @@ jobs:
       - run:
           name: install dependencies
           command: |
-          go clean -modcache
-          go mod tidy
-          go mod download
+            go clean -modcache
+            go mod tidy
+            go mod download
       - run:
           name: test
           command: go test -v ./... -race -coverprofile=coverage.yml -covermode=atomic
