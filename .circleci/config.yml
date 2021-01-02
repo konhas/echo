@@ -12,13 +12,14 @@ jobs:
     steps:
       - checkout
       - run:
-          name: setup
-          command: apt-get update && apt-get install -y make
-      - run: go clean -modcache
-      - run: go mod tidy
-      - run: go mod download
-
+          name: install dependencies
+          command: |
+            go clean -modcache
+            go mod tidy
+            go mod download
       - run:
           name: test
-          command: go test -v ./... -race -coverprofile=coverage.txt -covermode=atomic
-      - run: bash <(curl -s https://codecov.io/bash)
+          command: go test -v ./... -race -coverprofile=coverage.yml -covermode=atomic
+      - run: 
+          name: codecov
+          command: bash <(curl -s https://codecov.io/bash)
