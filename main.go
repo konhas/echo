@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github/konhas/echo-server/route"
+	"github/konhas/echo-server/api/route"
 
 	"github.com/labstack/echo/v4"
 	mw "github.com/labstack/echo/v4/middleware"
